@@ -1,3 +1,4 @@
+CREATE TABLE "categories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "created_at" datetime, "updated_at" datetime);
 CREATE TABLE "images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "product_id" integer, "image" varchar(255), "created_at" datetime, "updated_at" datetime);
 CREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" varchar(255), "price" decimal(8,2), "created_at" datetime, "updated_at" datetime);
 CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL);
@@ -15,3 +16,5 @@ INSERT INTO schema_migrations (version) VALUES ('20131214125621');
 INSERT INTO schema_migrations (version) VALUES ('20131222092016');
 
 INSERT INTO schema_migrations (version) VALUES ('20131225172903');
+
+INSERT INTO schema_migrations (version) VALUES ('20140115140217');

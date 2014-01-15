@@ -12,6 +12,7 @@ gem 'devise'
 gem 'twitter-bootstrap-rails'
 gem 'slim-rails'
 gem 'carrierwave'
+gem 'inherited_resources'
 
 group :doc do
   gem 'sdoc', require: false
