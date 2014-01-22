@@ -1,23 +1,11 @@
 h1 Список продуктов
 
-table
-  tr
-    th Title
-    th Description
-    th Price
-    th
-    th
-    th
-
-  - @products.each do |product|
-    tr
-      td = product.title
-      td = product.description
-      td = product.price
-      td = link_to 'Show', [:admin, product]
-      td = link_to 'Edit', edit_admin_product_path(product)
-      td = link_to 'Destroy', [:admin, product], data: {:confirm => 'Are you sure?'}, :method => :delete
+.list
+  = render 'list'
 
 br
 
-= link_to 'New Product', new_admin_product_path
+.form
+  = render 'form'
+
+/= link_to 'New Product', new_admin_product_path

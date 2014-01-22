@@ -6,7 +6,7 @@ table
     th
     th
 
-  - @categories.each do |category|
+  - collection.each do |category|
     tr
       td = link_to 'Show', [:admin, category]
       td = link_to 'Edit', edit_admin_category_path(category)
