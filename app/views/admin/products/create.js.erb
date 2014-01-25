@@ -1,5 +1,4 @@
 $('.form').html('<%= j render "form" %>');
-alert('<%= j flash[:notice] %>');
 
 <% if @product.errors.empty? %>
     $('.list').html('<%= j render "list" %>');
