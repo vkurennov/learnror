@@ -23,11 +23,15 @@ group :test, :development do
   gem 'zeus'
   gem 'pry-rails'
   gem 'pry-plus'
+  gem 'selenium-webdriver'
+  gem 'capybara-webkit'
+  gem 'database_cleaner'
 end
 
 group :test do
   gem 'shoulda-matchers'
   gem 'capybara'
   gem 'launchy'
+
 end
 

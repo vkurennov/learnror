@@ -14,4 +14,4 @@ table
       td = product.price
       td = link_to 'Show', [:admin, product]
       td = link_to 'Edit', edit_admin_product_path(product)
-      td = link_to 'Destroy', [:admin, product], data: {:confirm => 'Are you sure?'}, method: :delete
+      td = link_to 'Destroy', [:admin, product], data: {:confirm => 'Are you sure?'}, method: :delete, remote: true
