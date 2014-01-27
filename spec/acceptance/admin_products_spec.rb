@@ -45,7 +45,7 @@ feature "Admin can manage products", %q{
 
       click_on 'Destroy'
       #page.driver.browser.switch_to.alert.accept
-      page.driver.accept_js_confirms!
+      #page.driver.accept_js_confirms!
 
       expect(current_path).to be_eql admin_products_path
       expect(page).to_not have_content 'New Product'
