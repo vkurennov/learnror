@@ -1,0 +1,3 @@
+<% publish_to '/lots/update' do  %>
+    $('#lot_<%= resource.lot.id %> .end_time').html('<%= j resource.lot.end_time.to_s %>');
+<% end %>
