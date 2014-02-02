@@ -1,0 +1,5 @@
+h1= resource.title
+
+p.end_time= "End Time: #{resource.end_time}"
+
+p= button_to 'Make a Bet!', lot_bets_path(lot_id: resource.id), remote: true

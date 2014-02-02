@@ -5,6 +5,9 @@ Learnror::Application.routes.draw do
     resources :products
     resources :categories
   end
+  resources :lots, only: [:index, :show] do
+    resources :bets, only: [:create]
+  end
 
   root to: 'site#index'
 end

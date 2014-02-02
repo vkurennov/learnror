@@ -1,0 +1,10 @@
+table
+  tr
+    th Title
+    th End time
+
+  - collection.each do |lot|
+    tr
+      td = link_to lot.title, lot_path(lot)
+      td = lot.end_time
+
