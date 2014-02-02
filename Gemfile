@@ -13,6 +13,8 @@ gem 'twitter-bootstrap-rails'
 gem 'slim-rails'
 gem 'carrierwave'
 gem 'inherited_resources'
+gem 'private_pub'
+gem 'thin'
 
 group :doc do
   gem 'sdoc', require: false

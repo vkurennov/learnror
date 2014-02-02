@@ -4,7 +4,9 @@ table
     th End time
 
   - collection.each do |lot|
-    tr
+    tr id="lot_#{lot.id}"
       td = link_to lot.title, lot_path(lot)
-      td = lot.end_time
+      td.end_time = lot.end_time
+
+= subscribe_to '/lots/update'
 

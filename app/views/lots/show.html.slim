@@ -1,5 +1,9 @@
 h1= resource.title
 
-p.end_time= "End Time: #{resource.end_time}"
+div id="lot_#{resource.id}"
+  p End Time:
+  p.end_time= resource.end_time
 
 p= button_to 'Make a Bet!', lot_bets_path(lot_id: resource.id), remote: true
+
+= subscribe_to '/lots/update'
