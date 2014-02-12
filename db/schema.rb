@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140202083305) do
+ActiveRecord::Schema.define(version: 20140212150505) do
 
   create_table "bets", force: true do |t|
     t.integer  "lot_id"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20140202083305) do
     t.datetime "end_time"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.float    "price",      default: 0.0
   end
 
   create_table "products", force: true do |t|

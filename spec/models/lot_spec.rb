@@ -1,5 +1,15 @@
 require 'spec_helper'
 
 describe Lot do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it '#increase_price' do
+    pending
+  end
+
+  it '#increase_end_time' do
+    pending
+  end
+
+  it '#active?' do
+    pending
+  end
 end

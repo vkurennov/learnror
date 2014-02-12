@@ -2,12 +2,18 @@ class Bet < ActiveRecord::Base
   belongs_to :lot
   belongs_to :user
 
-  after_create :increase_lot_end_time
+  validate :lot_active?
+
+  after_create :update_lot
 
   private
 
-  def increase_lot_end_time
-    self.lot.end_time += 30.seconds
-    self.lot.save!
+  def update_lot
+    lot.increase_price
+    lot.increase_end_time
+  end
+
+  def lot_active?
+    errors.add(:lot, 'Lot is not active') unless lot.active?
   end
 end
