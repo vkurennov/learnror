@@ -15,6 +15,9 @@ gem 'carrierwave'
 gem 'inherited_resources'
 gem 'private_pub'
 gem 'thin'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'figaro'
 
 group :doc do
   gem 'sdoc', require: false

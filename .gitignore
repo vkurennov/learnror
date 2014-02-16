@@ -16,3 +16,6 @@
 /tmp
 /config/database.yml
 /.idea
+
+# Ignore application configuration
+/config/application.yml

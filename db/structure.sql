@@ -1,3 +1,4 @@
+CREATE TABLE "authorizations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "user_id" integer, "created_at" datetime, "updated_at" datetime);
 CREATE TABLE "bets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "lot_id" integer, "user_id" integer, "created_at" datetime, "updated_at" datetime);
 CREATE TABLE "categories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "created_at" datetime, "updated_at" datetime);
 CREATE TABLE "images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "product_id" integer, "image" varchar(255), "created_at" datetime, "updated_at" datetime);
@@ -28,3 +29,5 @@ INSERT INTO schema_migrations (version) VALUES ('20140202083215');
 INSERT INTO schema_migrations (version) VALUES ('20140202083305');
 
 INSERT INTO schema_migrations (version) VALUES ('20140212150505');
+
+INSERT INTO schema_migrations (version) VALUES ('20140216122608');
