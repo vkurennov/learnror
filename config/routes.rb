@@ -9,5 +9,7 @@ Learnror::Application.routes.draw do
     resources :bets, only: [:create]
   end
 
+  resource :profile
+
   root to: 'site#index'
 end

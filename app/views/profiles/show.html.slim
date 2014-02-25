@@ -1,0 +1,6 @@
+p= current_user.email
+p= current_user.first_name
+p= current_user.last_name
+
+- current_user.authorizations.each do |a|
+  p= "#{a.provider} #{a.uid}"

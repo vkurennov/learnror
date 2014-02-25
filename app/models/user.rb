@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_many :authorizations
+  has_many :authorizations, dependent: :destroy
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:facebook]
