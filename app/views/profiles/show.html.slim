@@ -4,3 +4,7 @@ p= current_user.last_name
 
 - current_user.authorizations.each do |a|
   p= "#{a.provider} #{a.uid}"
+
+
+p= link_to 'Добавить Facebook', user_omniauth_authorize_path(:facebook)
+p= link_to 'Добавить Vkontakte', user_omniauth_authorize_path(:vkontakte)

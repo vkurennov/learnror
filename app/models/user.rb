@@ -29,4 +29,14 @@ class User < ActiveRecord::Base
   def create_authorization(auth)
     self.authorizations.create!(provider: auth.provider, uid: auth.uid)
   end
+
+  def add_authorization(auth)
+    authorization = Authorization.where(provider: auth.provider, uid: auth.uid.to_s).first
+    if authorization
+      authorization.user == self
+    else
+      create_authorization(auth)
+      true
+    end
+  end
 end
