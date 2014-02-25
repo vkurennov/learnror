@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   has_many :authorizations, dependent: :destroy
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:facebook]
+         :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:facebook, :vkontakte]
 
   #validates :first_name, :last_name, presence: true
 
@@ -16,9 +16,11 @@ class User < ActiveRecord::Base
       if user
         user.create_authorization(auth)
       else
-        password = Devise.friendly_token[0, 20]
-        user = User.create(email: email, password: password, password_confirmation: password)
-        user.create_authorization(auth)
+        if email.present?
+          password = Devise.friendly_token[0, 20]
+          user = User.create(email: email, password: password, password_confirmation: password)
+          user.create_authorization(auth)
+        end
       end
     end
     user

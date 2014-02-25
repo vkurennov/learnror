@@ -18,6 +18,7 @@ gem 'thin'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'figaro'
+gem 'omniauth-vkontakte'
 
 group :doc do
   gem 'sdoc', require: false
