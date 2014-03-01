@@ -19,6 +19,7 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'figaro'
 gem 'omniauth-vkontakte'
+gem 'cancan'
 
 group :doc do
   gem 'sdoc', require: false

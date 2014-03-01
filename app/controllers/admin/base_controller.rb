@@ -1,13 +1,13 @@
 class Admin::BaseController < InheritedResources::Base
   before_action :authenticate_user!
-  before_action :check_admin
+
+  before_filter :authorize_resource
 
   layout 'admin'
 
   protected
 
-  def check_admin
-    render text: "У вас нет прав доступа к этой странице" unless current_user.admin?
-    false
+  def authorize_resource
+    authorize! :manage, :admin
   end
 end

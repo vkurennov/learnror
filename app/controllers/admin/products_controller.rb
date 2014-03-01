@@ -6,6 +6,7 @@ class Admin::ProductsController < Admin::BaseController
   before_action :collection, only: [:create, :destroy], if: -> { request.xhr? }
 
 
+
   private
 
   def build_resource_params
