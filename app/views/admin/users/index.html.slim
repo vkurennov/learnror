@@ -1,0 +1,12 @@
+h1 Список пользователей
+
+table
+  tr
+    th
+    th
+    th
+
+  - collection.each do |user|
+    tr
+      td = user.email
+      td = link_to 'Show', [:admin, user]

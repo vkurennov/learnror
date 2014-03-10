@@ -4,6 +4,9 @@ Learnror::Application.routes.draw do
   namespace :admin do
     resources :products
     resources :categories
+    resources :users, only: [:index, :show] do
+      resources :permissions, only: [:index, :create, :destroy]
+    end
   end
   resources :lots, only: [:index, :show] do
     resources :bets, only: [:create]

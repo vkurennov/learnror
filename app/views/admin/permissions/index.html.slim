@@ -1,0 +1,13 @@
+h1= "Права для пользователя #{parent.email}"
+
+table
+  thead
+    th
+    th
+    th
+  tbody
+    - @all_permissions.each do |p|
+      tr
+        td= p.title
+        td= link_to 'Вкл', admin_user_permissions_path(user_id: parent, permission_id: p), method: :post, class: "#{'active' if collection.include?(p)}"
+        td= link_to 'Выкл', admin_user_permission_path(p, user_id: parent), method: :delete, class: "#{'active' unless collection.include?(p)}"

@@ -28,9 +28,9 @@ html lang="en"
           .container.nav-collapse
             ul.nav
               li= link_to "Products", admin_products_path
-              li= link_to "Link 2", "/path2"
-              li= link_to "Link 3", "/path3"
-
+              li= link_to "Categories", admin_categories_path
+              li= link_to "Users", admin_users_path
+              li= link_to "Log out", destroy_user_session_path, method: :delete
     .container
       .main
         .row

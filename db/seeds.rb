@@ -1,7 +1,11 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+[
+    {title: 'Категории', action: :manage, subject: 'Category'},
+    {title: 'Продукты', action: :manage, subject: 'Product'},
+    {title: 'Пользователи', action: :manage, subject: 'User'},
+    {title: 'Права', action: :manage, subject: 'Permission'}
+].each do |permission|
+  title = permission.delete(:title)
+  p = Permission.where(permission).first
+  p.present? ? p.update(title: title) : Permission.create!(permission.merge(title: title))
+end
+

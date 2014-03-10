@@ -1,0 +1,10 @@
+h1= "Пользователь #{resource.email}"
+
+h3 Права
+- resource.permissions do |p|
+  p= p.title
+
+- if resource.permissions.empty?
+  p Нет специальных прав
+
+p= link_to 'Изменить права', admin_user_permissions_path(user_id: resource)

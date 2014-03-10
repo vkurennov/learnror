@@ -1,6 +1,9 @@
 class User < ActiveRecord::Base
   has_many :authorizations, dependent: :destroy
 
+  has_many :user_permissions
+  has_many :permissions, through: :user_permissions
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:facebook, :vkontakte]
 
