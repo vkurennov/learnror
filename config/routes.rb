@@ -1,5 +1,11 @@
+require 'sidekiq/web'
+
 Learnror::Application.routes.draw do
   devise_for :users, controllers: { registrations: 'registrations', omniauth_callbacks: 'omniauth_callbacks' }
+
+  authenticate :user, lambda { |u| u.admin? } do
+    mount Sidekiq::Web => '/sidekiq'
+  end
 
   namespace :admin do
     resources :products

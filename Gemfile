@@ -20,6 +20,9 @@ gem 'omniauth-facebook'
 gem 'figaro'
 gem 'omniauth-vkontakte'
 gem 'cancan'
+#gem 'delayed_job_active_record'
+gem 'sidekiq'
+gem 'sinatra', '>= 1.3.0', require: false
 
 group :doc do
   gem 'sdoc', require: false

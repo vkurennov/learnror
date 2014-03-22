@@ -42,4 +42,15 @@ class User < ActiveRecord::Base
       true
     end
   end
+
+  def self.calculate_raiting
+    self.all.each { |u| u.delay.calculate_raiting }
+  end
+
+  def calculate_raiting
+    puts 'Sart'
+    sleep(40)
+    #Notifier.delay.signup
+    puts 'End'
+  end
 end
