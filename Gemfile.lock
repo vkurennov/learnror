@@ -163,6 +163,7 @@ GEM
       omniauth (~> 1.0)
       omniauth-oauth2 (~> 1.1)
     orm_adapter (0.5.0)
+    pg (0.17.1)
     polyglot (0.3.3)
     private_pub (1.0.3)
       faye
@@ -330,6 +331,7 @@ DEPENDENCIES
   omniauth
   omniauth-facebook
   omniauth-vkontakte
+  pg
   private_pub
   pry-plus
   pry-rails
