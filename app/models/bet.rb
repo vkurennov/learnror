@@ -2,7 +2,8 @@ class Bet < ActiveRecord::Base
   belongs_to :lot
   belongs_to :user
 
-  validate :lot_active?
+  validates :lot, :user, presence: true
+  #validate :lot_active?
 
   after_create :update_lot
 

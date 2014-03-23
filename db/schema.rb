@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140315075321) do
+ActiveRecord::Schema.define(version: 20140323082922) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "authorizations", force: true do |t|
     t.string   "provider"
@@ -28,8 +31,8 @@ ActiveRecord::Schema.define(version: 20140315075321) do
     t.datetime "updated_at"
   end
 
-  add_index "bets", ["lot_id"], name: "index_bets_on_lot_id"
-  add_index "bets", ["user_id"], name: "index_bets_on_user_id"
+  add_index "bets", ["lot_id"], name: "index_bets_on_lot_id", using: :btree
+  add_index "bets", ["user_id"], name: "index_bets_on_user_id", using: :btree
 
   create_table "categories", force: true do |t|
     t.string   "title"
@@ -51,7 +54,7 @@ ActiveRecord::Schema.define(version: 20140315075321) do
     t.datetime "updated_at"
   end
 
-  add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority"
+  add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
 
   create_table "images", force: true do |t|
     t.integer  "product_id"
@@ -60,7 +63,7 @@ ActiveRecord::Schema.define(version: 20140315075321) do
     t.datetime "updated_at"
   end
 
-  add_index "images", ["product_id"], name: "index_images_on_product_id"
+  add_index "images", ["product_id"], name: "index_images_on_product_id", using: :btree
 
   create_table "lots", force: true do |t|
     t.string   "title"
@@ -94,8 +97,8 @@ ActiveRecord::Schema.define(version: 20140315075321) do
     t.datetime "updated_at"
   end
 
-  add_index "user_permissions", ["permission_id"], name: "index_user_permissions_on_permission_id"
-  add_index "user_permissions", ["user_id"], name: "index_user_permissions_on_user_id"
+  add_index "user_permissions", ["permission_id"], name: "index_user_permissions_on_permission_id", using: :btree
+  add_index "user_permissions", ["user_id"], name: "index_user_permissions_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "first_name"
@@ -107,15 +110,12 @@ ActiveRecord::Schema.define(version: 20140315075321) do
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,     null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
     t.boolean  "admin",                  default: false
+    t.boolean  "bot",                    default: false
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["bot"], name: "index_users_on_bot", using: :btree
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end

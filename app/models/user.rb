@@ -7,7 +7,13 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:facebook, :vkontakte]
 
+  scope :bots, -> { where(bot: true) }
+
   #validates :first_name, :last_name, presence: true
+
+  def self.random_bot
+    bots.order('RANDOM()').first
+  end
 
   def self.find_for_oauth(auth)
     authorization = Authorization.where(provider: auth.provider, uid: auth.uid.to_s).first
