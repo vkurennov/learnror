@@ -31,6 +31,7 @@ group :development do
   gem 'capistrano'
   gem 'rvm-capistrano'
   gem 'net-ssh', '2.7.0'
+  gem 'capistrano-sidekiq'
 end
 
 group :doc do
