@@ -1,0 +1,13 @@
+development: &shared
+  adapter: postgresql
+  encoding: unicode
+  database: learnror_development
+  pool: 5
+
+test:
+  <<: *shared
+  database: learnror_test
+
+production:
+  <<: *shared
+  database: learnror_production
