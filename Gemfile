@@ -25,6 +25,13 @@ gem 'cancan'
 gem 'sidekiq'
 gem 'sinatra', '>= 1.3.0', require: false
 gem 'sidetiq'
+gem 'therubyracer'
+
+group :development do
+  gem 'capistrano'
+  gem 'rvm-capistrano'
+  gem 'net-ssh', '2.7.0'
+end
 
 group :doc do
   gem 'sdoc', require: false
